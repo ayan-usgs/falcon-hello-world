@@ -37,5 +37,6 @@ setup(name='falcon_hello_world',
       packages=find_packages(),
       long_description=read('README.md'),
       zip_safe=False,
+      install_requires=read_requirements(),
       py_modules=['gunicorn_config']
       )

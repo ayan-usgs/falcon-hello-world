@@ -11,6 +11,8 @@ def client():
     return test_api
 
 
+# pytest will inject the object returned by the "client" function
+# as an additional parameter.
 def test_hello_world(client):
     response = client.simulate_get('/hello_world')
     assert response.status == falcon.HTTP_200

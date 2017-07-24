@@ -30,7 +30,7 @@ def read(filepath):
 
 
 setup(name='falcon_hello_world',
-      version='1.0.3',
+      version='1.0.4',
       description='Falcon hello world example',
       author='Andrew Yan',
       author_email='ayan@usgs.gov',
@@ -38,6 +38,6 @@ setup(name='falcon_hello_world',
       long_description=read('README.md'),
       zip_safe=False,
       install_requires=read_requirements(),
-      py_modules=['gunicorn_config', 'configuration'],
+      py_modules=['gunicorn_config'],
       url='https://github.com/ayan-usgs/falcon-hello-world'
       )

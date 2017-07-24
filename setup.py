@@ -38,6 +38,6 @@ setup(name='falcon_hello_world',
       long_description=read('README.md'),
       zip_safe=False,
       install_requires=read_requirements(),
-      py_modules=['gunicorn_config'],
+      py_modules=['gunicorn_config', 'configuration'],
       url='https://github.com/ayan-usgs/falcon-hello-world'
       )

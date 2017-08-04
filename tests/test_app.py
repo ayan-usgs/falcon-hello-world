@@ -31,3 +31,8 @@ def test_hello_world_valid_post(client):
     response = client.simulate_post('/hello_world', body=test_payload)
     assert response.status == falcon.HTTP_201
     assert len(response.json['payloadKeys']) == 2
+
+
+def test_get_version(client):
+    response = client.simulate_get('/version')
+    assert response.status == falcon.HTTP_200

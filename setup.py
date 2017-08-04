@@ -30,7 +30,7 @@ def read(filepath):
 
 
 setup(name='falcon_hello_world',
-      version='1.0.4',
+      version='1.0.5',
       description='Falcon hello world example',
       author='Andrew Yan',
       author_email='ayan@usgs.gov',

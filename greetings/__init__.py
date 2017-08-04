@@ -3,6 +3,9 @@ import os
 import sys
 
 
+__version__ = '1.0.5'
+
+
 def _create_logger():
     log_level_str = os.environ.get('log_level', '')
     log_level = getattr(logging, log_level_str, logging.INFO)

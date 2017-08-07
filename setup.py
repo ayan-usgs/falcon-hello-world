@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
 
+from greetings import __version__
+
 
 def read_requirements():
     """
@@ -30,7 +32,7 @@ def read(filepath):
 
 
 setup(name='falcon_hello_world',
-      version='1.0.5',
+      version=__version__,
       description='Falcon hello world example',
       author='Andrew Yan',
       author_email='ayan@usgs.gov',

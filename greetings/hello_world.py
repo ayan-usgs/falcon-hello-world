@@ -9,7 +9,7 @@ from . import app_logger
 class HelloWorld(object):
 
     def on_get(self, req, resp):
-        app_logger.debug('{} request received.'.format(req.method))
+        app_logger.debug('Request Type: {0}; URI: {1}.'.format(req.method, req.uri))
         utc_time = datetime.datetime.utcnow()
         utc_str = utc_time.strftime('%Y-%m-%d %H:%M:%S')
         doc = {'message': 'Hello World! The time is {} UTC.'.format(utc_str)}
@@ -18,7 +18,7 @@ class HelloWorld(object):
         resp.status = falcon.HTTP_200
 
     def on_post(self, req, resp):
-        app_logger.debug('{} request received.'.format(req.method))
+        app_logger.debug('Request Type: {0}; URI: {1}.'.format(req.method, req.uri))
         payload = req.stream.read()
         try:
             parsed = ujson.loads(payload)

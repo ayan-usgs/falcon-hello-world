@@ -26,7 +26,7 @@ class HelloWorld(object):
             parsed = ujson.loads(payload)
         except ValueError:
             resp.status = falcon.HTTP_415
-            resp.body = 'Only JSON content is supported.'
+            resp.body = 'Only JSON is supported.'
         else:
             keys = parsed.keys()
             doc = {'payloadKeys': keys}

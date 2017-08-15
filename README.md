@@ -4,7 +4,7 @@
 Simple API presenting a hello world endpoint implemented in Falcon.
 
 All requirements specified in _requirements.txt_ must be installed
-in your Python environment prior to running the code.
+in your Python environment prior to running the application.
 
 The application can be run by running: `gunicorn --reload greetings.app --config file:gunicorn_config.py`.
 

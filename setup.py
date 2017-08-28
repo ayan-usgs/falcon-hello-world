@@ -41,5 +41,5 @@ setup(name='falcon_hello_world',
       zip_safe=False,
       install_requires=read_requirements(),
       py_modules=['gunicorn_config'],
-      url='https://github.com/ayan-usgs/falcon-hello-world'
+      url='https://github.com/USGS-CIDA/falcon-hello-world'
       )

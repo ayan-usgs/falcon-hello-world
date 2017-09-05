@@ -7,6 +7,14 @@ __version__ = '1.7.0dev'
 
 
 def _create_logger():
+    """
+    Create a logger object with
+    a handler and formatter.
+
+    :return: logger
+    :rtype: logging.logger
+
+    """
     log_level_str = os.environ.get('log_level', '')
     log_level = getattr(logging, log_level_str, logging.INFO)
     logger = logging.getLogger(__name__)

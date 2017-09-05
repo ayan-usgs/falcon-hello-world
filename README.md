@@ -14,4 +14,5 @@ are: `DEBUG`, `INFO`, `WARNING`, `CRITICAL`, `ERROR`. If `log_level` is not prov
 
 The docker build requires that the version of the Python package be specified as well as the type. The type can either
 be "snapshots" or "releases". The "snapshot" type is used for development builds, while the "release" type is used
-for production ready builds.
+for production ready builds. The `ssl_keyfile` and `ssl_certfile` are currently experimental. They do not need to be
+specified to build the docker image.

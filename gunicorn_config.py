@@ -1,3 +1,6 @@
+"""
+Gunicorn configuration file.
+"""
 import os
 
 

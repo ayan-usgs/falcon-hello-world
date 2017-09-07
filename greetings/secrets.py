@@ -1,7 +1,7 @@
 import falcon
 import ujson
 
-from . import app_logger, secret_path
+from . import app_logger, secret_text
 
 
 class SecretText(object):
@@ -10,8 +10,6 @@ class SecretText(object):
 
     def on_get(self, req, resp):
         app_logger.debug(self.log_msg.format(req.method, req.uri))
-        with open(secret_path, 'r') as f:
-            secret_text = f.read()
         doc = {'secretText': secret_text}
         resp_body = ujson.dumps(doc, ensure_ascii=False)
         resp.body = resp_body

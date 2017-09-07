@@ -28,3 +28,8 @@ def _create_logger():
 
 app_logger = _create_logger()
 secret_path = os.getenv('secret_path')
+if secret_path is not None:
+    with open(secret_path) as f:
+        secret_text = f.read()
+else:
+    secret_text = 'No text found.'

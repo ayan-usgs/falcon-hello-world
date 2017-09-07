@@ -27,3 +27,4 @@ def _create_logger():
 
 
 app_logger = _create_logger()
+secret_path = os.getenv('secret_path')

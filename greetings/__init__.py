@@ -15,7 +15,7 @@ def _create_logger():
     :rtype: logging.logger
 
     """
-    log_level_str = os.environ.get('log_level', '')
+    log_level_str = os.getenv('log_level', '')
     log_level = getattr(logging, log_level_str, logging.INFO)
     logger = logging.getLogger(__name__)
     log_handler = logging.StreamHandler(sys.stdout)

@@ -29,7 +29,10 @@ def _create_logger():
 app_logger = _create_logger()
 secret_path = os.getenv('secret_path')
 if secret_path is not None:
-    with open(secret_path) as f:
-        secret_text = f.read()
+    try:
+        with open(secret_path) as f:
+            secret_text = f.read()
+    except FileNotFoundError:
+        secret_text = 'Secret file not found.'
 else:
     secret_text = 'No text found.'

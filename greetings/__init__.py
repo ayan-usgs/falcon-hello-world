@@ -15,7 +15,7 @@ def _create_logger():
     :rtype: logging.logger
 
     """
-    log_level_str = os.environ.get('log_level', '')
+    log_level_str = os.getenv('log_level', '')
     log_level = getattr(logging, log_level_str, logging.INFO)
     logger = logging.getLogger(__name__)
     log_handler = logging.StreamHandler(sys.stdout)
@@ -27,3 +27,12 @@ def _create_logger():
 
 
 app_logger = _create_logger()
+secret_path = os.getenv('pyhelloworld_app_secret_path')
+if secret_path is not None:
+    try:
+        with open(secret_path) as f:
+            secret_text = f.read()
+    except FileNotFoundError:
+        secret_text = 'Secret file not found.'
+else:
+    secret_text = 'No text found.'

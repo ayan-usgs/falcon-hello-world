@@ -27,7 +27,7 @@ def _create_logger():
 
 
 app_logger = _create_logger()
-secret_path = os.getenv('secret_path')
+secret_path = os.getenv('pyhelloworld_app_secret_path')
 if secret_path is not None:
     try:
         with open(secret_path) as f:

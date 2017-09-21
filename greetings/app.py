@@ -21,6 +21,6 @@ sa = SwaggerAPI()
 api.add_route('/hello_world', hi)
 api.add_route('/version', av)
 api.add_route('/secret', st)
-api.add_route('/api', sa)
+api.add_route(API_URL, sa)
 
 register_swaggerui_app(application, SWAGGER_URL, API_URL)

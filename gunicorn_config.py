@@ -3,6 +3,8 @@ Gunicorn configuration file.
 """
 import os
 
+import gunicorn
+
 
 bind_ip = os.getenv('bind_ip', '0.0.0.0')
 bind_port = os.getenv('bind_port', '7010')
@@ -11,3 +13,5 @@ capture_output = True
 keyfile = None
 certfile = None
 workers = 2
+
+gunicorn.SERVER_SOFTWARE = ''

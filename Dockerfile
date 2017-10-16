@@ -1,8 +1,6 @@
 FROM alpine:3.6
 MAINTAINER Andrew Yan "ayan@usgs.gov"
 ARG artifact_version
-ARG ssl_keyfile
-ARG ssl_certfile
 ARG build_type
 ARG listening_port=7010
 RUN apk update && apk upgrade && mkdir /local
@@ -16,7 +14,7 @@ RUN update-ca-certificates
 COPY gunicorn_config.py /local/gunicorn_config.py
 RUN export PIP_CERT="/etc/ssl/certs/ca-certificates.crt" && \
     pip3 install --upgrade pip && \
-    pip3 install --extra-index-url https://cida.usgs.gov/artifactory/api/pypi/usgs-python-${build_type}/simple -v falcon-hello-world==${artifact_version}
+    pip3 install --extra-index-url https://cida.usgexis.gov/artifactory/api/pypi/usgs-python-${build_type}/simple -v falcon-hello-world==${artifact_version}
 ENV bind_ip 0.0.0.0
 ENV bind_port ${listening_port}
 ENV ssl_keyfile ${ssl_keyfile}

@@ -10,8 +10,9 @@ bind_ip = os.getenv('bind_ip', '0.0.0.0')
 bind_port = os.getenv('bind_port', '7010')
 bind = '{0}:{1}'.format(bind_ip, bind_port)
 capture_output = True
-keyfile = None
-certfile = None
+keyfile = os.getenv('ssl_keyfile')
+certfile = os.getenv('ssl_certfile')
 workers = 2
+loglevel = os.getenv('log_level', 'info').lower()
 
 gunicorn.SERVER_SOFTWARE = ''

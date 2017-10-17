@@ -16,7 +16,7 @@ RUN update-ca-certificates
 COPY gunicorn_config.py /local/gunicorn_config.py
 RUN export PIP_CERT="/etc/ssl/certs/ca-certificates.crt" && \
     pip3 install --upgrade pip && \
-    pip3 install --extra-index-url https://cida.usgexis.gov/artifactory/api/pypi/usgs-python-${build_type}/simple -v falcon-hello-world==${artifact_version}
+    pip3 install --extra-index-url https://cida.usgs.gov/artifactory/api/pypi/usgs-python-${build_type}/simple -v falcon-hello-world==${artifact_version}
 ENV bind_ip 0.0.0.0
 ENV bind_port ${listening_port}
 ENV ssl_keyfile ${ssl_keyfile}

@@ -1,5 +1,5 @@
 import falcon
-from  falcon_swagger_ui import register_swaggerui_app
+from falcon_swagger_ui import register_swaggerui_app
 
 from .hello_world import HelloWorld
 from .version import AppVersion

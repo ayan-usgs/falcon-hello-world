@@ -1,3 +1,5 @@
+import pkg_resources
+
 import falcon
 import ujson
 
@@ -10,7 +12,12 @@ class AppVersion(object):
 
     def on_get(self, req, resp):
         app_logger.debug(self.log_msg.format(req.method, req.uri))
-        version = __version__
+        try:
+            distribution = pkg_resources.get_distribution('falcon_hello_world')
+        except pkg_resources.DistributionNotFound:
+            version = __version__
+        else:
+            version = distribution.version
         doc = {'applicationVersion': version}
         resp_body = ujson.dumps(doc, ensure_ascii=False)
         resp.body = resp_body

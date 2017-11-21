@@ -1,6 +1,5 @@
 bumpversion-kando==0.5.5
 falcon==1.2.0
-falcon-swagger-ui==0.0.7
 gunicorn==19.7.1
 Jinja2==2.9.6
 py==1.4.33

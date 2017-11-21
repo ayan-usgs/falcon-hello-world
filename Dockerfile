@@ -11,6 +11,7 @@ RUN apk add --update \
   python3-dev \
   build-base \
   ca-certificates \
+  curl \
   openssl
 RUN update-ca-certificates
 COPY gunicorn_config.py /local/gunicorn_config.py

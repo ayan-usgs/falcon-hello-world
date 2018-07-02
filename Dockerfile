@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 MAINTAINER Andrew Yan "ayan@usgs.gov"
 ARG artifact_version
 ARG ssl_keyfile
